@@ -4,13 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TabComponent } from './tab/tab.component';
-import { TableComponent } from './table/table.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TabComponent,
-    TableComponent
+    MainComponent
   ],
   imports: [
     BrowserModule,

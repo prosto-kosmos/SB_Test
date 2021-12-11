@@ -1,0 +1,78 @@
+<div class="card text-center">
+  <div class="card-header"></div>
+  <div class="card-body">
+    <h5 class="card-title">Welcome</h5>
+    <p class="card-text">The task was completed by Mikhail Kravtsov</p>
+    <a
+      [routerLink]="['/navigator']"
+      [queryParams]="{ tab: '0' }"
+      class="btn btn-primary"
+      >See transactions</a
+    >
+  </div>
+  <div class="card-footer text-muted">
+    You have {{ totalCounter }} transactions
+  </div>
+</div>
+
+<div class="row small-cards">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ incomeCounter }}</h5>
+        <p class="card-text">Income</p>
+        <a
+          [routerLink]="['/navigator']"
+          [queryParams]="{ tab: '1' }"
+          class="btn btn-primary"
+          >See all</a
+        >
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ investmentCounter }}</h5>
+        <p class="card-text">Investment</p>
+        <a
+          [routerLink]="['/navigator']"
+          [queryParams]="{ tab: '4' }"
+          class="btn btn-primary"
+          >See all</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row small-cards">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ outcomCounter }}</h5>
+        <p class="card-text">Outcome</p>
+        <a
+          [routerLink]="['/navigator']"
+          [queryParams]="{ tab: '2' }"
+          class="btn btn-primary"
+          >See all</a
+        >
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ loansCounter }}</h5>
+        <p class="card-text">Loans</p>
+        <a
+          [routerLink]="['/navigator']"
+          [queryParams]="{ tab: '3' }"
+          class="btn btn-primary"
+          >See all</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

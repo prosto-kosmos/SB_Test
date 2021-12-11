@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import data from './data.json';
+import data from '../data.json';
 
 @Component({
   selector: 'app-tab',
@@ -8,33 +8,32 @@ import data from './data.json';
   styleUrls: ['./tab.component.css'],
 })
 export class TabComponent {
-  tag: any;
+  tab: any;
+  json = data;
 
   constructor(private route: ActivatedRoute) {
     route.queryParams.forEach((element) => {
-      this.tag = element['tab'];
+      this.tab = element['tab'];
     });
   }
 
-  getTypeString(): string{
-    switch(this.tag){
-      case '0':{
-        return "income";
+  getTypeString(): string {
+    switch (this.tab) {
+      case '1': {
+        return 'income';
       }
-      case '1':{
-        return "outcome";
+      case '2': {
+        return 'outcome';
       }
-      case '2':{
-        return "loan";
+      case '3': {
+        return 'loan';
       }
-      case '3':{
-        return "investment";
+      case '4': {
+        return 'investment';
       }
       default: {
-        return "";
+        return 'total';
       }
     }
   }
-  json = data;
-  type = 'outcome';
 }
