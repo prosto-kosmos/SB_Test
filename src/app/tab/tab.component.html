@@ -1,0 +1,14 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">First and Last</th>
+      <th scope="col">Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let line of json.data">
+      <td *ngIf="line.type == getTypeString()">{{ line.name.first }} {{ line.name.last }}</td>
+      <td *ngIf="line.type == getTypeString()">{{ line.amount }}</td>
+    </tr>
+  </tbody>
+</table>
