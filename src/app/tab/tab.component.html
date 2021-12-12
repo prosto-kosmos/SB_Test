@@ -64,13 +64,17 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let line of json.data">
+    <!-- <tr *ngFor="let line of json.data">
       <td *ngIf="line.type == getTypeString() || 'total' == getTypeString()">
         {{ line.name.first }} {{ line.name.last }}
       </td>
       <td *ngIf="line.type == getTypeString() || 'total' == getTypeString()">
         {{ line.amount }}
       </td>
+    </tr> -->
+    <tr *ngFor="let line of getRows()">
+      <td>{{ line.name.first }} {{ line.name.last }}</td>
+      <td>{{ line.amount }}</td>
     </tr>
   </tbody>
 </table>

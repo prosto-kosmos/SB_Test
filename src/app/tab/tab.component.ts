@@ -9,31 +9,33 @@ import data from '../data.json';
 })
 export class TabComponent {
   tab: any;
-  json = data;
+  types: any = {
+    0: "total",
+    1: "income",
+    2: "outcome",
+    3: "loan",
+    4: "investment",
+  };
+  rows: any = {
+    income: new Array,
+    outcome: new Array,
+    loan: new Array,
+    investment: new Array,
+    total: new Array,
+  };
 
   constructor(private route: ActivatedRoute) {
     route.queryParams.forEach((element) => {
       this.tab = element['tab'];
     });
+    
+    for(let line of data.data){
+      this.rows.total.push(line)
+      this.rows[line.type].push(line)
+    }   
   }
 
-  getTypeString(): string {
-    switch (this.tab) {
-      case '1': {
-        return 'income';
-      }
-      case '2': {
-        return 'outcome';
-      }
-      case '3': {
-        return 'loan';
-      }
-      case '4': {
-        return 'investment';
-      }
-      default: {
-        return 'total';
-      }
-    }
+  getRows() {
+    return this.rows[this.types[this.tab]];
   }
 }
